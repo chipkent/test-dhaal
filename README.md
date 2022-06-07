@@ -17,14 +17,12 @@ To run:
 ./run.sh
 ```
 
-This publishes port 8080 to the localhost for creating the Deephaven server.
+This publishes container port 8080 to the localhost port 10000 for creating the Deephaven server.
 
 ## Example script
 
 ```python
-from deephaven_server import Server
-s = Server(8080)
-s.start()
+from deephaven_server import Server; s = Server(8080); s.start()
 
 # add your code here
 ```

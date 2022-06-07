@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [ -z "${DHC_ROOT}" ] 
-then
-	echo "Please set \$DHC_ROOT to your Deephaven repository"
-        exit -1
-fi
-
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
-WHL_DIR=${SCRIPT_DIR}/wheels
+BUILD_DIR=${SCRIPT_DIR}/build
+WHL_DIR=${SCRIPT_DIR}/build/wheels
 
-cd ${DHC_ROOT}
+mkdir -p ${BUILD_DIR}
+cd ${BUILD_DIR}
 
+[ ! -d "deephaven-core" ] && git clone git@github.com:deephaven/deephaven-core.git
+cd deephaven-core
+git checkout main
+git pull
 ./gradlew prepareCompose
 ./gradlew :py-embedded-server:assemble
 
