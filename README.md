@@ -3,7 +3,7 @@ Test Deephaven as a python library
 
 ## Build
 
-To build run:
+To build:
 
 ```bash
 ./build.sh
