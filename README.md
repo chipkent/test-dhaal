@@ -33,6 +33,7 @@ with ugp_shared_lock():
     t_last = t.last_by("A")
     t_join = t.natural_join(t_last, on="A", joins=["LastTime=Timestamp"])
 
+print(t_join)
 ```
 
 You can connect to the Deephaven IDE by going to [http://localhost:10000/ide/](http://localhost:10000/ide/) in your local web browser.
