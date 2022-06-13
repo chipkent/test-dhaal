@@ -22,10 +22,13 @@ This publishes container port 8080 to the localhost port 10000 for creating the 
 ## Example script
 
 ```python
-from deephaven_server import Server; s = Server(8080); s.start()
+from deephaven_server import Server
+s = Server(port=8080, jvm_args=["-Xmx4g"])
+s.start()
 
 # UGP lock must be held to execute many query operations
 
+from deephaven import time_table
 from deephaven._ugp import ugp_shared_lock
 
 with ugp_shared_lock():
