@@ -1,6 +1,18 @@
 # test-dhaal
 Test Deephaven as a python library
 
+## Run via docker
+
+```bash
+docker pull ghcr.io/chipkent/test-dhaal:main
+```
+
+## Use to build Docker images
+
+```
+FROM ghcr.io/chipkent/test-dhaal:main
+```
+
 ## Build
 
 To build:
