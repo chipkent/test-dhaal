@@ -9,4 +9,4 @@ RUN ls /wheels/*
 RUN python -m pip install --upgrade pip && \
     pip install --force-reinstall /wheels/*.whl
 
-ENTRYPOINT python
+CMD python
