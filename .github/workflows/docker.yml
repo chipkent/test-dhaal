@@ -33,23 +33,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Checkout Deephaven
-        uses: actions/checkout@v2
-        with:
-          repository: deephaven/deephaven-core
-          path: deephaven-core
-
-      - name: Build Deephaven
-        run: |
-          ls
-          cd deephaven-core
-          ./gradlew prepareCompose
-          ./gradlew :py-embedded-server:assemble 
-          mkdir -p ../build/wheels
-          cp py/embedded-server/build/wheel/deephaven_server-*.whl py/server/build/wheel/deephaven-*.whl py/jpy/build/deephaven-jpy-wheel/deephaven_jpy-*.whl ../build/wheels
-          cd ..
-          ls
-        
       - name: Log in to the Container registry
         uses: docker/login-action@v1.10.0
         with:
