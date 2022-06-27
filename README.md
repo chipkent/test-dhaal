@@ -5,31 +5,35 @@ Test Deephaven as a python library
 
 ```bash
 docker pull ghcr.io/chipkent/test-dhaal:main
+docker run -it -p 10000:8080 ghcr.io/chipkent/test-dhaal:main
 ```
 
-## Use to build Docker images
+This publishes container port 8080 to the localhost port 10000 for creating the Deephaven server.
+
+## Use to build custom Docker images
 
 ```
 FROM ghcr.io/chipkent/test-dhaal:main
 ```
 
-## Build
+## Local Build
 
-To build:
+Images are automatically built via GitHub actions.  These images should be used.
+
+If you insist on building locally:
 
 ```bash
-./build.sh
+docker build -t test-dhaal .
 ```
-
-## Run
 
 To run:
 
 ```bash
-./run.sh
+docker run -it -p 10000:8080 test-dhaal:main
 ```
 
 This publishes container port 8080 to the localhost port 10000 for creating the Deephaven server.
+
 
 ## Example script
 
