@@ -5,7 +5,7 @@ RUN apt update && \
     apt install -y openjdk-11-jdk
 
 RUN python -m pip install --upgrade pip && \
-    pip install deephaven-server==0.14.0.dev5
+    pip install deephaven-server==0.14.0.dev6
 
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
 CMD python

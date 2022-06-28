@@ -1,6 +1,11 @@
 
-import test_dhaal
+import os
+print(f'JAVA_HOME={os.environ["JAVA_HOME"]}')
 
-test_dhaal.start_dh()
+from test_dhaal.setup import start_dh
 
-t, t_last, t_join = test_dhaal.example_query()
+start_dh()
+
+from test_dhaal.exec import example_query
+
+t, t_last, t_join = example_query()
