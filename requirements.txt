@@ -1,1 +1,1 @@
-deephaven-server==0.14.0.dev6
+deephaven-server==0.14.0.dev7
