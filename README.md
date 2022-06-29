@@ -5,7 +5,7 @@ Test Deephaven as a python library
 
 ```bash
 docker pull ghcr.io/chipkent/test-dhaal:main
-docker run -it -p 10000:8080 ghcr.io/chipkent/test-dhaal:main
+docker run -it -p 10000:8080 --platform linux/amd64 ghcr.io/chipkent/test-dhaal:main
 ```
 
 This publishes container port 8080 to the localhost port 10000 for creating the Deephaven server.
@@ -66,7 +66,7 @@ s = Server(port=8080, jvm_args=["-Xmx4g"])
 s.start()
 
 # UGP lock is automatically acquired for each query operation
-from deephave import ugp
+from deephaven import ugp
 ugp.auto_locking = True
 
 
