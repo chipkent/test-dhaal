@@ -33,6 +33,6 @@ setuptools.setup(
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.7",
     install_requires=[
-        "deephaven-server==0.14.0.dev7",
+        "deephaven-server==0.14.0",
     ],
 )
